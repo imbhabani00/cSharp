@@ -1,0 +1,20 @@
+using System;
+using System.Runtime.InteropServices;
+namespace Hello_World
+{
+    class Practise
+    {
+        static void Main(string[] args)
+        {
+            string rocket = "   /\\   \n  /  \\  \n /____\\ \n |    | \n |____| \n  |  |  \n  |__|  \n /    \\ \n/______\\\n    ||   \n   /||\\  \n  /_||_\\ \n   ||||  \n   ====  ";
+            for (int i = 10; i >= 0; i--)
+            {
+                Console.Clear();
+                Console.WriteLine($"Counter is {i}");
+                Console.WriteLine(rocket);
+                rocket = "\r\n" + rocket ;
+                Thread.Sleep(1000);
+            }
+        }
+    }
+}
