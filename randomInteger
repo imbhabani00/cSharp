@@ -1,0 +1,25 @@
+using System;
+using System.Runtime.InteropServices;
+namespace Hello_World
+{
+    class Practise
+    {
+        static void Main(string[] args)
+        {
+            Random randomInt = new Random();
+            int isRandomInt = randomInt.Next(1, 11);
+            Console.WriteLine("Enter your number ?");
+            var userInput = Console.ReadLine();
+            int number;
+            bool isDigit = int.TryParse(userInput, out number);
+            if(isDigit){
+                if(number == isRandomInt){
+                    Console.WriteLine($"Your number matched : enterd number is {userInput} and random integer is {isRandomInt}");
+                }
+                else{
+                    Console.WriteLine($"Your number did not matche : enterd number is {userInput} and random integer is {isRandomInt}");
+                }
+            }
+        }
+    }
+}
