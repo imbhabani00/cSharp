@@ -1,0 +1,45 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Globalization;
+using System.Linq;
+using System.Net.Http.Headers;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace deligates
+{
+    internal class Program
+    {
+        public class Employee {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+            public Employee(int id, string name, string description)
+            {
+                Id = id;
+                Name = name;
+                Description = description;
+            }
+        }
+
+        static void Main(string[] args)
+        {
+            Dictionary<int, Employee> employees = new Dictionary<int, Employee>();
+            employees.Add(1,new Employee(1,"BhabaniShankar","Soft Trainee"));
+            employees.Add(2, new Employee(2, "ShaktiSankar", "Data Analyst"));
+            employees.Add(3, new Employee(3, "Akash Nahak", "Java Developer"));
+            employees.Add(4, new Employee(4, "Rashmi panda", "FrontEnd Developer"));
+            employees[1].Name = "BhabaniShankar Mishra";
+            employees.Remove(2);
+            foreach (var employee in employees)
+            {
+                Console.WriteLine($"Employee id is : {employee.Value.Id}, " +
+                    $"Employee name is : {employee.Value.Name}, " +
+                    $"Employee Designation is : {employee.Value.Description}");
+            }
+        }
+    }    
+}
